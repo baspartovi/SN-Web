@@ -1,8 +1,4 @@
 
-
-
-
-
     body {
       margin: 0;
     }
@@ -11,10 +7,9 @@
       font-family: 'Source Sans Pro', sans-serif;
     }
 
-    //#main-body {
-    //  max-width: 1200px;
-    //  margin: auto;
-    //}
+    button {
+      outline: none;
+    }
 
     #nav {
       border-bottom: 1px solid #D4D4D4;
@@ -97,7 +92,6 @@
       color: #000000;
     }
 
-
     .player button {
       font-size: 15px;
       text-decoration: none;
@@ -127,7 +121,6 @@
       -webkit-transition-property: box-shadow;
       transition-property: box-shadow;
     }
-
 
     .num {
       color: #6D6C6E;
