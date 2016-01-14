@@ -14,24 +14,35 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="snWebApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
+  <body ng-app="snWebApp" ng-controller="MainCtrl">
 
     <div id="main-body">
-      <!--<header>-->
-        <!--<nav id="nav">-->
-            <!--<ul>-->
-              <!--<li>Home</li>-->
-              <!--<li>About</li>-->
-              <!--<li>Music</li>-->
-            <!--</ul>-->
-        <!--</nav>-->
-      <!--</header>-->
 
-      <div></div>
+      <section class="banner-sec">
+
+      </section>
+
+      <section class="player-sec">
+
+        <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
+          <div class="player-info">
+
+          </div>
+
+          <div class="player-table">
+            <ul>
+              <li ng-repeat="track in tracks" ng-click="playPause($index)" ng-class="{'active': player.playing === track.src}">
+                <button class="table-btn">
+                  <span class="num">{{$index + 1}}</span> {{track.user.username}} - {{track.title}}
+                </button>
+                <span class="track-duration">{{ track.duration / 1000 | hhmmss }}</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
 
       <div class="container">
         <div ng-view=""></div>
@@ -52,6 +63,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/plangular/dist/plangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

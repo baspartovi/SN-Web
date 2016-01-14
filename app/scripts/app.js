@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'plangular'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, plangularConfigProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -32,4 +33,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+    plangularConfigProvider.clientId = '5fe8f9dee33cffbd9d2ca2b6708641f1';
   });

@@ -4,11 +4,7 @@
 
 
     body {
-      background-image: url("/images/ShanNash1000-logo.jpg");
-      background-size: 1100px auto;
-      background-position: 50% 0;
-      background-repeat: no-repeat;
-
+      margin: 0;
     }
 
     header {
@@ -33,14 +29,113 @@
     }
 
     #nav ul {
-       display: inline-block;
-       border-radius: 0.35em;
-       box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
-       padding: 0 1.5em 0 1.5em;
+      display: inline-block;
+      border-radius: 0.35em;
+      box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+      padding: 0 1.5em 0 1.5em;
      }
 
     #nav ul li {
       display: inline-block;
       text-align: center;
       padding: 0 1.5em 0 1.5em;
+    }
+
+    .banner-sec {
+      background-image: url("/images/shan-nash-1500x500.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 0;
+      padding-top: 33.3%;
+
+      //@media screen and (max-width: 1100px) {
+      //  min-height: 300px;
+      //}
+      //
+      //@media screen and (max-width: 960px) {
+      //  min-height: 350px;
+      //}
+
+
+    }
+
+    .player-sec {
+      border-top: 1px solid #DEDEDE;
+      background-color: #ffffff;
+      padding: 2em 0;
+    }
+
+    .player {
+      background-color: #2A282A;
+      border-radius: 3px;
+      max-width: 800px;
+      margin: auto;
+      padding: 1em;
+    }
+
+    .player ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .player li {
+      cursor: pointer;
+      border-bottom: 1px solid #404040;
+    }
+
+    .player li:hover {
+      background-color: #ffffff;
+    }
+
+
+    .player li:hover > .table-btn{
+      color: #000000;
+    }
+
+    .player li:hover > .track-duration{
+      color: #000000;
+    }
+
+
+    .player button {
+      font-size: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      line-height: 2em;
+      text-align: left;
+      padding: .5em 1em;
+      margin: 0;
+      height: auto;
+      border: 1px solid transparent;
+      vertical-align: middle;
+      -webkit-appearance: none;
+    }
+
+    .player .table-btn {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      background-color: transparent;
+      border-radius: 0;
+      border: 1px solid transparent;
+      -webkit-transition-duration: .1s;
+      transition-duration: .1s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+    }
+
+
+    .num {
+      color: #6D6C6E;
+      padding-right: 10px;
+    }
+
+    .track-duration {
+      float: right;
+      color: #ffffff;
+      padding-top: 18px;
     }
