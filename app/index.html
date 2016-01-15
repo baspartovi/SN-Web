@@ -32,10 +32,14 @@
           <div class="player-table">
             <ul>
               <li ng-repeat="track in tracks" ng-click="playPause($index)" ng-class="{'active': player.playing === track.src}">
-                <button class="table-btn">
-                  <span class="num">{{$index + 1}}</span> {{track.user.username}} - {{track.title}}
-                </button>
-                <span class="track-duration">{{ track.duration / 1000 | hhmmss }}</span>
+                <!--<button class="table-btn">-->
+                  <!--<span class="num">{{$index + 1}}</span> {{track.user.username}} - {{track.title}}-->
+                <!--</button>-->
+                <div class="song-name">
+                  <span class="num">{{$index + 1}}</span>
+                  {{track.user.username}} - {{track.title}}
+                  <span class="track-duration">{{ track.duration / 1000 | hhmmss }}</span>
+                </div>
               </li>
             </ul>
           </div>

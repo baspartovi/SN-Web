@@ -1,14 +1,27 @@
 
+
     body {
       margin: 0;
-    }
+      font-family: "RoundedElegance", sans-serif;
 
-    header {
-      font-family: 'Source Sans Pro', sans-serif;
     }
 
     button {
       outline: none;
+      font-family: "RoundedElegance", sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @font-face {
+      font-family: RoundedElegance;
+      src: url(Rounded_Elegance.ttf);
+    }
+
+    @font-face {
+      font-family: BikoReg;
+      src: url(Biko_Regular.otf);
     }
 
     #nav {
@@ -79,17 +92,39 @@
       border-bottom: 1px solid #404040;
     }
 
+    .player li .track-duration {
+      float: right;
+      color: #ffffff;
+      padding-top: 2px;
+      padding-right: 5px;
+    }
+
     .player li:hover {
       background-color: #ffffff;
     }
 
+    .player li:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
 
-    .player li:hover > .table-btn{
+    .player li:hover > .song-name {
+      font-weight: 600;
       color: #000000;
     }
 
-    .player li:hover > .track-duration{
+    .player li:hover > .song-name .track-duration{
       color: #000000;
+      font-weight: 600;
+    }
+
+    .player li.active > .song-name {
+      background-color: #000000;
+    }
+
+    .player li.active:hover > .song-name {
+      background-color: #ffffff;
     }
 
     .player button {
@@ -117,18 +152,27 @@
       -webkit-transition-duration: .1s;
       transition-duration: .1s;
       -webkit-transition-timing-function: ease-out;
-      transition-timing-function: ease-out;
-      -webkit-transition-property: box-shadow;
-      transition-property: box-shadow;
     }
 
-    .num {
+    .player-table .num {
       color: #6D6C6E;
       padding-right: 10px;
     }
 
-    .track-duration {
-      float: right;
+    .player-table .song-name {
+      font-size: 15px;
+      line-height: 2em;
+      text-align: left;
+      padding: .5em 1em;
+      margin: 0;
+      height: auto;
+      position: relative;
+      z-index: 2;
       color: #ffffff;
-      padding-top: 18px;
+      background-color: transparent;
+      vertical-align: middle;
+      -webkit-appearance: none;
+
     }
+
+
