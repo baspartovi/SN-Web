@@ -1,4 +1,7 @@
-
+$player-bg: #2F2F2D;
+$player-secondary: #898989;
+$player-row-divider: #DEDEDE;
+$progress: #D68D44;
 
     body {
       margin: 0;
@@ -9,9 +12,6 @@
     button {
       outline: none;
       font-family: "RoundedElegance", sans-serif;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     @font-face {
@@ -57,29 +57,52 @@
       height: 0;
       padding-top: 33.3%;
 
-      //@media screen and (max-width: 1100px) {
-      //  min-height: 300px;
-      //}
-      //
-      //@media screen and (max-width: 960px) {
-      //  min-height: 350px;
-      //}
+      @media screen and (min-width: 681px) and (max-width: 1100px) {
+        background-image: url("/images/shan-nash-900x400.jpg");
+        padding-top: 50%;
+      }
 
+      @media screen and (min-width: 421px) and (max-width: 680px) {
+        background-image: url("/images/shan-nash-600x500.jpg");
+        padding-top: 83%;
+      }
+
+      @media screen and (max-width: 420px) {
+        background-image: url("/images/shan-nash-400x500.jpg");
+        padding-top: 125%;
+      }
 
     }
 
     .player-sec {
-      border-top: 1px solid #DEDEDE;
+      border-top: 1px solid $player-row-divider;
       background-color: #ffffff;
       padding: 2em 0;
+
+      @media screen and (min-width: 681px) and (max-width: 1100px) {
+
+      }
+
+      @media screen and (min-width: 421px) and (max-width: 680px) {
+
+      }
+
+      @media screen and (max-width: 420px) {
+        padding: 0;
+      }
     }
 
     .player {
-      background-color: #2A282A;
+      background-color: $player-bg;
       border-radius: 3px;
       max-width: 800px;
       margin: auto;
       padding: 1em;
+
+      @media screen and (max-width: 420px) {
+        margin-top: -16px;
+        padding: 0;
+      }
     }
 
     .player ul {
@@ -95,12 +118,14 @@
     .player li .track-duration {
       float: right;
       color: #ffffff;
-      padding-top: 2px;
-      padding-right: 5px;
     }
 
     .player li:hover {
       background-color: #ffffff;
+
+      @media screen and (max-width: 420px) {
+        background-color: transparent;
+      }
     }
 
     .player li:after {
@@ -109,22 +134,46 @@
       clear: both;
     }
 
-    .player li:hover > .song-name {
+    .player li:hover > .track-info {
       font-weight: 600;
       color: #000000;
+
+      @media screen and (max-width: 420px) {
+        font-weight: normal;
+        color: #ffffff;
+      }
     }
 
-    .player li:hover > .song-name .track-duration{
+    .player li:hover > .track-info .track-duration{
       color: #000000;
       font-weight: 600;
+
+      @media screen and (max-width: 420px) {
+        font-weight: normal;
+        color: #ffffff;
+      }
     }
 
-    .player li.active > .song-name {
-      background-color: #000000;
+    .player li.active > .track-info {
+      background-color: #3C3C3C;
     }
 
-    .player li.active:hover > .song-name {
+    .player li.active:hover > .track-info {
       background-color: #ffffff;
+
+      @media screen and (max-width: 420px) {
+        background-color: #3C3C3C;
+      }
+    }
+
+    .player li.active > .track-info .num {
+      display: none;
+      visibility: hidden;
+    }
+
+    .player li.active > .track-info .play {
+      display: inline-block;
+      visibility: visible;
     }
 
     .player button {
@@ -159,7 +208,17 @@
       padding-right: 10px;
     }
 
-    .player-table .song-name {
+    .player-table .play {
+      display: none;
+      padding-right: 12px;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 6px solid #CACACA;
+      visibility: hidden;
+    }
+
+    .player-table .track-info {
       font-size: 15px;
       line-height: 2em;
       text-align: left;
@@ -173,6 +232,75 @@
       vertical-align: middle;
       -webkit-appearance: none;
 
+      @media screen and (max-width: 420px) {
+        padding: .5em 2em;
+      }
+    }
+
+    .player-table .track-info .short-div {
+      width: 85%;
+      float: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media screen and (max-width: 420px) {
+        width: 80%;
+      }
+    }
+
+    .track-info:after, .top:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .progress {
+      display: block;
+      width: 104%;
+      height: .3em;
+      margin: .5em 0em .5em -1em;
+      background-color: rgba(0,0,0,.0625);
+      border: 0;
+      overflow: hidden;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    progress[value]::-webkit-progress-value {
+      //background-color: #9e5c00;
+      background-color: #D68D44;
+
+
+      border-radius: 2px;
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+
+    .player-info {
+      color: #CACACA;
+    }
+
+    .player-info .top {
+      padding: 0 1em;
+    }
+
+    .player-info h3 {
+      margin-left: .8em;
+      margin-top: 0;
+      color: #FF6C00;
     }
 
 
+
+    .player-info span.righty {
+      margin-top: 22px;
+      font-size: 15px;
+    }
+
+    .righty {
+      float: right;
+    }
+
+    .lefty {
+      float: left;
+    }

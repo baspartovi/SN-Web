@@ -16,44 +16,60 @@
   </head>
   <body ng-app="snWebApp" ng-controller="MainCtrl">
 
-    <div id="main-body">
+      <!--< MAIN BODY >-->
+      <div id="main-body">
 
-      <section class="banner-sec">
+          <!--< BANNER >-->
+          <section class="banner-sec"></section>
 
-      </section>
+          <!--< PLAYER >-->
+          <section class="player-sec">
 
-      <section class="player-sec">
+              <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
 
-        <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
-          <div class="player-info">
+                  <div class="player-info">
+                        <div class="top">
+                            <h4 class="username lefty">{{playlist.user.username}}</h4>
+                            <span class="righty">{{ currentTime | hhmmss }} / {{ duration | hhmmss }}</span>
+                        </div>
 
-          </div>
+                        <h3 class="playlist-title">{{playlist.title}}</h3>
 
-          <div class="player-table">
-            <ul>
-              <li ng-repeat="track in tracks" ng-click="playPause($index)" ng-class="{'active': player.playing === track.src}">
-                <!--<button class="table-btn">-->
-                  <!--<span class="num">{{$index + 1}}</span> {{track.user.username}} - {{track.title}}-->
-                <!--</button>-->
-                <div class="song-name">
-                  <span class="num">{{$index + 1}}</span>
-                  {{track.user.username}} - {{track.title}}
-                  <span class="track-duration">{{ track.duration / 1000 | hhmmss }}</span>
-                </div>
-              </li>
-            </ul>
-          </div>
+                        <div class="bottom">
+                            <progress
+                              class="progress"
+                              ng-click="seek($event)"
+                              ng-value="currentTime / duration || 0">
+                              {{ currentTime / duration }}
+                            </progress>
+                        </div>
+                  </div>
 
-        </div>
+                  <div class="player-table">
+                    <ul>
+                      <li ng-repeat="track in tracks" ng-click="playPause($index)" ng-class="{'active': player.playing === track.src}">
+                        <div class="track-info">
+                          <div class="short-div">
+                            <span class="num">{{$index + 1}}</span>
+                            <span class="play"></span>
+                            <span class="track-title">{{track.title}}</span>
+                          </div>
+                          <span class="track-duration">{{ track.duration / 1000 | hhmmss }}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
 
-      </section>
+              </div>
 
-      <div class="container">
-        <div ng-view=""></div>
+          </section>
+
+        <!--<div class="container">-->
+          <!--<div ng-view=""></div>-->
+        <!--</div>-->
+
+
       </div>
-
-
-    </div>
 
 
 
