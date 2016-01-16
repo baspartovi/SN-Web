@@ -1,112 +1,182 @@
 $player-bg: #2F2F2D;
 $player-secondary: #898989;
+$player-tertiary: #ffffff;
 $player-row-divider: #DEDEDE;
 $progress: #D68D44;
 
-    body {
-      margin: 0;
-      font-family: "RoundedElegance", sans-serif;
+	body {
+		margin: 0;
+		font-family: "RoundedElegance", sans-serif;
+	}
 
-    }
+	button {
+		outline: none;
+		font-family: "RoundedElegance", sans-serif;
+	}
 
-    button {
-      outline: none;
-      font-family: "RoundedElegance", sans-serif;
-    }
+	@font-face {
+		font-family: RoundedElegance;
+		src: url(fonts/Rounded_Elegance.ttf);
+	}
 
-    @font-face {
-      font-family: RoundedElegance;
-      src: url(Rounded_Elegance.ttf);
-    }
 
-    @font-face {
-      font-family: BikoReg;
-      src: url(Biko_Regular.otf);
-    }
+	.banner-sec {
+		background-image: url("/images/shan-nash-1500x500.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 0;
+		padding-top: 33.3%;
+		margin-top: 36px;
 
-    #nav {
-      border-bottom: 1px solid #D4D4D4;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      color: #888888;
-      background-color: #ffffff;
-    }
+		@media screen and (min-width: 681px) and (max-width: 1100px) {
+			background-image: url("/images/shan-nash-900x400.jpg");
+			padding-top: 50%;
+		}
 
-    #nav ul {
-      display: inline-block;
-      border-radius: 0.35em;
-      box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
-      padding: 0 1.5em 0 1.5em;
-     }
+		@media screen and (min-width: 421px) and (max-width: 680px) {
+			background-image: url("/images/shan-nash-600x500.jpg");
+			padding-top: 83%;
+		}
 
-    #nav ul li {
-      display: inline-block;
-      text-align: center;
-      padding: 0 1.5em 0 1.5em;
-    }
+		@media screen and (max-width: 420px) {
+			background-image: url("/images/shan-nash-400x500.jpg");
+			padding-top: 125%;
+		}
+	}
 
-    .banner-sec {
-      background-image: url("/images/shan-nash-1500x500.jpg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 0;
-      padding-top: 33.3%;
+	nav {
+		border-bottom: 1px solid $player-row-divider;
+		background-color: #ffffff;
+		position: fixed;
+		font-size: 25px;
+		width: 100%;
+		padding: 5px;
+		top: 0;
 
-      @media screen and (min-width: 681px) and (max-width: 1100px) {
-        background-image: url("/images/shan-nash-900x400.jpg");
-        padding-top: 50%;
-      }
+		@media screen and (max-width: 680px) {
+			background-color: $player-bg;
+		}
+	}
 
-      @media screen and (min-width: 421px) and (max-width: 680px) {
-        background-image: url("/images/shan-nash-600x500.jpg");
-        padding-top: 83%;
-      }
+	nav ul {
+		max-width: 340px;
+		padding-left: 0;
+		margin: 0 0 0 auto;
 
-      @media screen and (max-width: 420px) {
-        background-image: url("/images/shan-nash-400x500.jpg");
-        padding-top: 125%;
-      }
+		@media screen and (max-width: 680px) {
+			margin: 0 auto;
+		}
+	}
 
-    }
+	nav li {
+		-moz-animation: nav-icons 0.5s ease-in-out forwards;
+		-webkit-animation: nav-icons 0.5s ease-in-out forwards;
+		-ms-animation: nav-icons 0.5s ease-in-out forwards;
+		animation: nav-icons 0.5s ease-in-out forwards;
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		display: inline-block;
+		position: relative;
+	}
 
-      .player-sec {
-            border-top: 1px solid $player-row-divider;
-            background-color: #ffffff;
-            padding: 2em 0;
+	nav ul a {
+		display: inline-block;
+		color: $player-bg;
+		width: 1.6em;
+		line-height: 1.6em;
+		font-size: 30px;
+		position: relative;
+		text-align: center;
+		top: 0;
+		-moz-transition: all .15s ease-in-out;
+		-webkit-transition: all .15s ease-in-out;
+		-ms-transition: all .15s ease-in-out;
+		transition: all .15s ease-in-out;
 
-            @media screen and (min-width: 681px) and (max-width: 1100px) {
+		@media screen and (max-width: 680px) {
+			color: $player-row-divider;
+		}
+	}
 
-            }
+	nav ul a:hover {
+		-webkit-transform: scale(1.15);
+		-moz-transform: scale(1.15);
+		-ms-transform: scale(1.15);
+		-o-transform: scale(1.15);
+		transform: scale(1.15);
 
-            @media screen and (min-width: 421px) and (max-width: 680px) {
-                  padding: 0;
-            }
+		@media screen and (max-width: 680px) {
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		}
+	}
 
-            @media screen and (max-width: 420px) {
-                  padding: 0;
-            }
-      }
+	nav ul a span {
+		display: none;
+	}
 
-      .player {
-            background-color: $player-bg;
-            border-radius: 3px;
-            max-width: 800px;
-            margin: auto;
-            padding: 1em;
+	nav #shannash {
+		cursor: pointer;
+		font-weight: bold;
+		padding-left: .5em;
+		text-decoration: none;
+		color: $player-bg;
 
-            @media screen and (min-width: 421px) and (max-width: 680px) {
-                padding: 0;
-            }
+		@media screen and (max-width: 680px) {
+			display: none;
+		}
+	}
 
-            @media screen and (max-width: 420px) {
-              padding: 0;
-            }
-      }
+	.icon {
+		text-decoration: none;
+		position: relative;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.icon > .label {
+		display: none;
+	}
+
+	.player-sec {
+		border-top: 1px solid $player-row-divider;
+		background-color: #ffffff;
+		padding: 2em 0;
+
+		@media screen and (min-width: 681px) and (max-width: 1100px) {
+
+		}
+
+		@media screen and (min-width: 421px) and (max-width: 680px) {
+			padding: 0;
+		}
+
+		@media screen and (max-width: 420px) {
+			padding: 0;
+		}
+	}
+
+	.player {
+		background-color: $player-bg;
+		border-radius: 3px;
+		max-width: 800px;
+		margin: auto;
+		padding: 1em;
+
+		@media screen and (min-width: 421px) and (max-width: 680px) {
+			padding: 0;
+		}
+
+		@media screen and (max-width: 420px) {
+			padding: 0;
+		}
+	}
 
     .player ul {
       list-style: none;
@@ -248,7 +318,7 @@ $progress: #D68D44;
       }
     }
 
-    .track-info:after, .top:after {
+    .track-info:after, .top:after, .playback:after {
       content: '';
       display: block;
       clear: both;
@@ -284,12 +354,10 @@ $progress: #D68D44;
     }
 
     .player-info h3 {
-      margin-left: .8em;
+      //margin-left: .8em;
       margin-top: 0;
       color: #FF6C00;
     }
-
-
 
     .player-info span.righty {
       margin-top: 22px;
@@ -303,3 +371,111 @@ $progress: #D68D44;
     .lefty {
       float: left;
     }
+
+    .playback {
+
+    }
+
+
+//    ++++++++++++++++++++++++++++++
+
+#play, #pause, #fwd, #rew {
+      width: 30px;
+      background: transparent;
+      position: relative;
+      display: block;
+      cursor: pointer;
+}
+
+#play, #pause {
+	left: -14px;
+}
+
+#play:before {
+      width: 0;
+      height: 0;
+      border-left: 17px solid $player-tertiary;
+      border-right: 17px solid transparent;
+      border-top: 17px solid transparent;
+      border-bottom: 17px solid transparent;
+      position: absolute;
+      content: "";
+	top: -5px;
+      left: -10px;
+}
+
+#pause:before {
+      width: 6px;
+      height: 20px;
+      background: $player-tertiary;
+      position: absolute;
+      content: "";
+	top: 2px;
+      left: 0;
+}
+
+#pause:after {
+      width: 6px;
+      height: 20px;
+      background: $player-tertiary;
+      position: absolute;
+      content: "";
+	top: 2px;
+      right: 36px;
+}
+
+#fwd {
+	left: -14px;
+}
+
+#fwd:before {
+      width: 0;
+      height: 0;
+      border-left: 12px solid $player-secondary;
+      border-right: 12px solid transparent;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      position: absolute;
+      content: "";
+      left: 17px;
+}
+
+#fwd:after {
+      width: 0;
+      height: 0;
+      border-left: 12px solid $player-secondary;
+      border-right: 12px solid transparent;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      position: absolute;
+      content: "";
+      left: 30px;
+}
+
+#rew {
+	left: -51px;
+}
+
+#rew:before {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid $player-secondary;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      position: absolute;
+      content: "";
+      right: 17px;
+}
+
+#rew:after {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid $player-secondary;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      position: absolute;
+      content: "";
+      right: 30px;
+}

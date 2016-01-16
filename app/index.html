@@ -1,24 +1,36 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+      <meta charset="utf-8">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+      <!-- build:css(.) styles/vendor.css -->
+      <!-- bower:css -->
+      <!-- endbower -->
+      <!-- endbuild -->
+      <!-- build:css(.tmp) styles/main.css -->
+      <link rel="stylesheet" href="styles/main.css">
+      <!-- endbuild -->
+      <link rel="stylesheet" href="styles/font-awesome.min.css">
   </head>
   <body ng-app="snWebApp" ng-controller="MainCtrl">
 
       <!--< MAIN BODY >-->
       <div id="main-body">
-
+            <nav>
+                  <a id="shannash" href="/" class="lefty">SHAN NASH</a>
+                  <ul>
+                        <li><a target="_blank" href="https://twitter.com/shannashmusic" class="icon fa fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/shannashmusic/" class="icon fa fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/shannashmusic/" class="icon fa fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/user/Shannashmusic" class="icon fa fa-youtube"><span class="label">YouTube</span></a></li>
+                        <li><a target="_blank" href="https://soundcloud.com/shannash" class="icon fa fa-soundcloud"><span class="label">Soundcloud</span></a></li>
+                        <li><a target="_blank" href="https://www.mixcloud.com/Shannash/" class="icon fa fa-cloud"><span class="label">MixCloud</span></a></li>
+                        <li><a href="mailto:shannashworld@gmail.com" class="icon fa fa-envelope-o"><span class="label">Email</span></a></li>
+                  </ul>
+            </nav>
           <!--< BANNER >-->
           <section class="banner-sec"></section>
 
@@ -33,7 +45,18 @@
                             <span class="righty">{{ currentTime | hhmmss }} / {{ duration | hhmmss }}</span>
                         </div>
 
-                        <h3 class="playlist-title">{{playlist.title}}</h3>
+                        <div class="top">
+
+                              <h3 class="playlist-title lefty">{{playlist.title}}</h3>
+                              <div class="playback righty">
+                                    <div id="rew" ng-click="previous()"></div>
+                                    <div id="play" ng-click="playPause(index)" ng-if="player.playing !== track.src"></div>
+                                    <div id="pause" ng-click="playPause(index)" ng-if="player.playing === track.src"></div>
+                                    <div id="fwd" ng-click="next()"></div>
+                              </div>
+
+                        </div>
+
 
                         <div class="bottom">
                             <progress
