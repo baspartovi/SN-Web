@@ -1,21 +1,31 @@
 <!doctype html>
 <html>
-  <head>
-      <meta charset="utf-8">
-      <title></title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width">
-      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-      <!-- build:css(.) styles/vendor.css -->
-      <!-- bower:css -->
-      <!-- endbower -->
-      <!-- endbuild -->
-      <!-- build:css(.tmp) styles/main.css -->
-      <link rel="stylesheet" href="styles/main.css">
-      <!-- endbuild -->
-      <link rel="stylesheet" href="styles/font-awesome.min.css">
-  </head>
+      <head>
+            <meta charset="utf-8">
+            <title>SHAN NASH</title>
+            <meta name="description" content="Shan Nash Music">
+            <meta name="viewport" content="width=device-width">
+            <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+            <link rel="icon" type="image/png" href="favicon.png">
+            <!-- build:css(.) styles/vendor.css -->
+            <!-- bower:css -->
+            <!-- endbower -->
+            <!-- endbuild -->
+            <!-- build:css(.tmp) styles/main.css -->
+            <link rel="stylesheet" href="styles/main.css">
+            <!-- endbuild -->
+            <link rel="stylesheet" href="styles/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      </head>
   <body ng-app="snWebApp" ng-controller="MainCtrl">
+
+  <!----------------------------------------->
+  <!--                                     -->
+  <!-- Designed and created by BAS PARTOVI -->
+  <!--   All Rights Reserved © BASP 2015   -->
+  <!--     Contact: www.BasPartovi.com     -->
+  <!--                                     -->
+  <!----------------------------------------->
 
       <!--< MAIN BODY >-->
       <div id="main-body">
@@ -31,10 +41,11 @@
                         <li><a href="mailto:shannashworld@gmail.com" class="icon fa fa-envelope-o"><span class="label">Email</span></a></li>
                   </ul>
             </nav>
-          <!--< BANNER >-->
+
+          <!--< BANNER SECTION >-->
           <section class="banner-sec"></section>
 
-          <!--< PLAYER >-->
+          <!--< PLAYER SECTION >-->
           <section class="player-sec">
 
               <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
@@ -87,33 +98,56 @@
 
           </section>
 
-        <!--<div class="container">-->
-          <!--<div ng-view=""></div>-->
-        <!--</div>-->
+            <!--< INSTAGRAM SECTION >-->
+            <section class="instagram-sec">
+                  <div class="insta-header">
+                        <a target="_blank" href="https://www.instagram.com/shannashmusic/" class="icon fa fa-instagram"><span class="label">Instagram</span></a>
+                  </div>
+                  <div class="insta-list">
+                        <li ng-repeat="item in items">
+                              <a href="{{item.link}}" target="_blank"><img ng-src="{{item.images.low_resolution.url}}" /></a>
+                              <!--<p ng-bind="item.caption.text"></p>-->
+                        </li>
+                  </div>
+
+            </section>
 
 
-      </div>
+            <footer id="footer">
+                  <div class="row">
+                        <div class="lefty">created by <a target="_blank" href="http://baspartovi.com/">BAS PARTOVI</a></div>
+                        <div class="righty">copy right © <a target="_blank" href="http://baspartovi.com/">BASP</a></div>
+                  </div>
+
+            </footer>
+
+
+      </div>      <!--< END MAIN BODY >-->
 
 
 
+      <!--<div class="container">-->
+      <!--<div ng-view=""></div>-->
+      <!--</div>-->
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/plangular/dist/plangular.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
-</body>
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <script src="bower_components/plangular/dist/plangular.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+            <!-- build:js({.tmp,app}) scripts/scripts.js -->
+            <script src="scripts/app.js"></script>
+            <script src="scripts/controllers/main.js"></script>
+            <script src="scripts/controllers/about.js"></script>
+            <!-- endbuild -->
+  </body>
 </html>
