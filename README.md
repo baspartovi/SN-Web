@@ -1,4 +1,4 @@
 # SN-Web
-Shan Nash Music Website
+Shan Nash Music - Web
 
-Currently under development. More to come soon!
+This project is currently under development. More to come soon!
