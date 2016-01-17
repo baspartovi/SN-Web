@@ -19,13 +19,13 @@
       </head>
   <body ng-app="snWebApp" ng-controller="MainCtrl">
 
-  <!----------------------------------------->
-  <!--                                     -->
-  <!-- Designed and created by BAS PARTOVI -->
-  <!--   All Rights Reserved © BASP 2015   -->
-  <!--     Contact: www.BasPartovi.com     -->
-  <!--                                     -->
-  <!----------------------------------------->
+      <!----------------------------------------->
+      <!--                                     -->
+      <!-- Designed and created by BAS PARTOVI -->
+      <!--   All Rights Reserved © BASP 2015   -->
+      <!--     Contact: www.BasPartovi.com     -->
+      <!--                                     -->
+      <!----------------------------------------->
 
       <!--< MAIN BODY >-->
       <div id="main-body">
@@ -43,7 +43,7 @@
             </nav>
 
           <!--< BANNER SECTION >-->
-          <section class="banner-sec"></section>
+          <section class="banner-sec animate delay-0_25s fadeIn"></section>
 
           <!--< PLAYER SECTION >-->
           <section class="player-sec">
@@ -105,7 +105,7 @@
                   </div>
                   <div class="insta-list">
                         <li ng-repeat="item in items">
-                              <a href="{{item.link}}" target="_blank"><img ng-src="{{item.images.low_resolution.url}}" /></a>
+                              <a href="{{item.link}}" target="_blank"><img class="insta-img" ng-src="{{item.images.low_resolution.url}}" /></a>
                               <!--<p ng-bind="item.caption.text"></p>-->
                         </li>
                   </div>
@@ -121,14 +121,7 @@
 
             </footer>
 
-
       </div>      <!--< END MAIN BODY >-->
-
-
-
-      <!--<div class="container">-->
-      <!--<div ng-view=""></div>-->
-      <!--</div>-->
 
 
       <!-- build:js(.) scripts/vendor.js -->

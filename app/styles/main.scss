@@ -3,14 +3,24 @@
 // All Rights Reserved © BASP 2015
 // Contact: www.BasPartovi.com
 // -----------------------------------
+@import "animations";
 
+//==== COLORS ====\\
+$charcoal: #2F2F2D;
+$white: #FFFFFF;
+$off-white: #CACACA;
+$divider-color: #DEDEDE;
 
-$player-bg: #2F2F2D;
-$player-secondary: #898989;
-$player-tertiary: #ffffff;
-$player-row-divider: #DEDEDE;
-$progress: #D68D44;
+$orange-dark: #FF6C00;
+$orange: #D68D44;
+$orange-light: #FFA700;
+
+$grey-darker: #3C3C3C;
+$grey-dark: #6D6C6E;
+$grey: #898989;
 $grey-light: #E6E6E6;
+$grey-lighter: #F7F7F7;
+
 
 
 //==== GENERAL STYLING =====\\
@@ -35,8 +45,8 @@ $grey-light: #E6E6E6;
 	}
 
 	nav {
-		border-bottom: 1px solid $player-row-divider;
-		background-color: #ffffff;
+		border-bottom: 1px solid $divider-color;
+		background-color: $white;
 		position: fixed;
 		font-size: 25px;
 		width: 100%;
@@ -45,7 +55,7 @@ $grey-light: #E6E6E6;
 		z-index: 100;
 
 		@media screen and (max-width: 680px) {
-			background-color: $player-bg;
+			background-color: $charcoal;
 		}
 	}
 
@@ -76,7 +86,7 @@ $grey-light: #E6E6E6;
 
 	nav ul a {
 		display: inline-block;
-		color: $player-bg;
+		color: $charcoal;
 		width: 1.6em;
 		line-height: 1.6em;
 		font-size: 30px;
@@ -89,7 +99,7 @@ $grey-light: #E6E6E6;
 		transition: all .15s ease-in-out;
 
 		@media screen and (max-width: 680px) {
-			color: $player-row-divider;
+			color: $divider-color;
 		}
 	}
 
@@ -99,6 +109,7 @@ $grey-light: #E6E6E6;
 		-ms-transform: scale(1.15);
 		-o-transform: scale(1.15);
 		transform: scale(1.15);
+		opacity: .5;
 
 		@media screen and (max-width: 680px) {
 			-webkit-transform: none;
@@ -106,6 +117,7 @@ $grey-light: #E6E6E6;
 			-ms-transform: none;
 			-o-transform: none;
 			transform: none;
+			opacity: 1;
 		}
 	}
 
@@ -118,7 +130,7 @@ $grey-light: #E6E6E6;
 		font-weight: bold;
 		padding-left: .5em;
 		text-decoration: none;
-		color: $player-bg;
+		color: $charcoal;
 
 		@media screen and (max-width: 680px) {
 			display: none;
@@ -180,7 +192,7 @@ $grey-light: #E6E6E6;
 
 	.instagram-sec {
 		margin: auto;
-		background-color: $grey-light;
+		background-color: $grey-lighter;
 		text-align: center;
 
 		@media screen and (max-width: 420px) {
@@ -237,52 +249,32 @@ $grey-light: #E6E6E6;
 		@media screen and (max-width: 681px) and (min-width: 421px) {
 			max-width: 32.7%;
 			float: left;
-			border: 1px solid #FFFFFF;
+			border: 1px solid $white;
 		}
 
 		@media screen and (max-width: 420px) {
 			max-width: 32.7%;
 			float: left;
-			border: 1px solid #FFFFFF;
+			border: 1px solid $white;
 		}
 	}
 
-//===== FOOTER =====\\
+      .instagram-sec .insta-img:hover {
+	      opacity: .65;
 
-	footer {
-		font-size: 11px;
-		font-weight: bold;
-		width: 100%;
-		height: 30px;
-		color: $player-secondary;
-		background-color: #FFFFFF;
-		border-top: 1px solid $player-row-divider;
-		z-index: 100;
-
-		@media screen and (max-width: 680px) {
-			position: fixed;
-			bottom: 0;
-		}
-	}
-
-      footer .row {
-		padding: 8px 1em;
+	      @media screen and (max-width: 680px) {
+		      opacity: 1;
+	      }
       }
 
-      footer a {
-		color: #000;
-      }
-
-      footer a:hover {
-		color: orange;
-      }
 
 
 //===== PLAYER =====\\
 
 	.player-sec {
-		border-top: 1px solid $player-row-divider;
-		background-color: #ffffff;
+		border-top: 1px solid $divider-color;
+		border-bottom: 1px solid $divider-color;
+		background-color: $white;
 		padding: 2em 2em;
 
 		@media screen and (min-width: 681px) and (max-width: 1100px) {
@@ -299,7 +291,7 @@ $grey-light: #E6E6E6;
 	}
 
 	.player {
-		background-color: $player-bg;
+		background-color: $charcoal;
 		border-radius: 3px;
 		max-width: 800px;
 		margin: auto;
@@ -318,7 +310,7 @@ $grey-light: #E6E6E6;
 		list-style: none;
 		padding-left: 0;
 		margin-bottom: 0;
-		border-bottom: 1px solid $player-secondary;
+		border-bottom: 1px solid $grey;
 	}
 
 	.player li {
@@ -328,11 +320,11 @@ $grey-light: #E6E6E6;
 
 	.player li .track-duration {
 		float: right;
-		color: #ffffff;
+		color: $white;
 	}
 
 	.player li:hover {
-		background-color: #ffffff;
+		background-color: $white;
 
 		@media screen and (max-width: 680px) {
 			background-color: transparent;
@@ -349,9 +341,9 @@ $grey-light: #E6E6E6;
 		font-weight: 600;
 		color: #000000;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: 680px) {
 			font-weight: normal;
-			color: #ffffff;
+			color: $white;
 		}
 	}
 
@@ -359,21 +351,21 @@ $grey-light: #E6E6E6;
 		color: #000000;
 		font-weight: 600;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: 680px) {
 			font-weight: normal;
-			color: #ffffff;
+			color: $white;
 		}
 	}
 
 	.player li.active > .track-info {
-		background-color: #3C3C3C;
+		background-color: $grey-darker;
 	}
 
 	.player li.active:hover > .track-info {
-		background-color: #ffffff;
+		background-color: $white;
 
 		@media screen and (max-width: 420px) {
-			background-color: #3C3C3C;
+			background-color: $grey-darker;
 		}
 	}
 
@@ -405,7 +397,7 @@ $grey-light: #E6E6E6;
 	.player .table-btn {
 		position: relative;
 		z-index: 2;
-		color: #ffffff;
+		color: $white;
 		background-color: transparent;
 		border-radius: 0;
 		border: 1px solid transparent;
@@ -415,7 +407,7 @@ $grey-light: #E6E6E6;
 	}
 
 	.player-table .num {
-		color: #6D6C6E;
+		color: $grey-dark;
 		padding-right: 10px;
 	}
 
@@ -425,7 +417,7 @@ $grey-light: #E6E6E6;
 		height: 0;
 		border-top: 5px solid transparent;
 		border-bottom: 5px solid transparent;
-		border-left: 6px solid #CACACA;
+		border-left: 6px solid $off-white;
 		visibility: hidden;
 	}
 
@@ -438,7 +430,7 @@ $grey-light: #E6E6E6;
 		height: auto;
 		position: relative;
 		z-index: 2;
-		color: #ffffff;
+		color: $white;
 		background-color: transparent;
 		vertical-align: middle;
 		-webkit-appearance: none;
@@ -490,7 +482,7 @@ $grey-light: #E6E6E6;
 
 	.player-info h3 {
 		margin-top: 0;
-		color: #FF6C00;
+		color: $orange-dark;
 	}
 
 	.player-info span.righty {
@@ -516,7 +508,7 @@ $grey-light: #E6E6E6;
 	#play:before {
 	      width: 0;
 	      height: 0;
-	      border-left: 17px solid $player-tertiary;
+	      border-left: 17px solid $white;
 	      border-right: 17px solid transparent;
 	      border-top: 17px solid transparent;
 	      border-bottom: 17px solid transparent;
@@ -529,7 +521,7 @@ $grey-light: #E6E6E6;
 	#pause:before {
 	      width: 6px;
 	      height: 20px;
-	      background: $player-tertiary;
+	      background: $white;
 	      position: absolute;
 	      content: "";
 		top: 2px;
@@ -539,7 +531,7 @@ $grey-light: #E6E6E6;
 	#pause:after {
 	      width: 6px;
 	      height: 20px;
-	      background: $player-tertiary;
+	      background: $white;
 	      position: absolute;
 	      content: "";
 		top: 2px;
@@ -553,7 +545,7 @@ $grey-light: #E6E6E6;
 	#fwd:before {
 	      width: 0;
 	      height: 0;
-	      border-left: 12px solid $player-secondary;
+	      border-left: 12px solid $grey;
 	      border-right: 12px solid transparent;
 	      border-top: 12px solid transparent;
 	      border-bottom: 12px solid transparent;
@@ -565,7 +557,7 @@ $grey-light: #E6E6E6;
 	#fwd:after {
 	      width: 0;
 	      height: 0;
-	      border-left: 12px solid $player-secondary;
+	      border-left: 12px solid $grey;
 	      border-right: 12px solid transparent;
 	      border-top: 12px solid transparent;
 	      border-bottom: 12px solid transparent;
@@ -582,7 +574,7 @@ $grey-light: #E6E6E6;
 	      width: 0;
 	      height: 0;
 	      border-left: 12px solid transparent;
-	      border-right: 12px solid $player-secondary;
+	      border-right: 12px solid $grey;
 	      border-top: 12px solid transparent;
 	      border-bottom: 12px solid transparent;
 	      position: absolute;
@@ -594,10 +586,41 @@ $grey-light: #E6E6E6;
 	      width: 0;
 	      height: 0;
 	      border-left: 12px solid transparent;
-	      border-right: 12px solid $player-secondary;
+	      border-right: 12px solid $grey;
 	      border-top: 12px solid transparent;
 	      border-bottom: 12px solid transparent;
 	      position: absolute;
 	      content: "";
 	      right: 30px;
+	}
+
+
+//===== FOOTER =====\\
+
+	footer {
+		font-size: 11px;
+		font-weight: bold;
+		width: 100%;
+		height: 30px;
+		color: $grey;
+		background-color: $white;
+		border-top: 1px solid $divider-color;
+		z-index: 100;
+
+		@media screen and (max-width: 680px) {
+			position: fixed;
+			bottom: 0;
+		}
+	}
+
+	footer .row {
+		padding: 8px 1em;
+	}
+
+	footer a {
+		color: #000000;
+	}
+
+	footer a:hover {
+		color: $orange-light;
 	}
