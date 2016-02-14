@@ -16,7 +16,6 @@ angular
         'ngRoute',
         'ngSanitize',
         'ngTouch',
-        'ngTwitter',
         'plangular'
     ])
     .config(function ($routeProvider, plangularConfigProvider) {

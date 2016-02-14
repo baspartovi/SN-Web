@@ -9,7 +9,7 @@
  * Controller of the snWebApp
  */
 angular.module('snWebApp')
-    .controller('MainCtrl', function ($scope, $twitterApi, Instagram) {
+    .controller('MainCtrl', function ($scope, Instagram) {
         $scope.items = [];
         $scope.data = {};
 
