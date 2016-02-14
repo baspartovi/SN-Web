@@ -3,143 +3,19 @@
 // All Rights Reserved © BASP 2015
 // Contact: www.BasPartovi.com
 // -----------------------------------
+
+//===== IMPORTS =====\\
+@import "vars";
 @import "animations";
-
-//==== COLORS ====\\
-$charcoal: #2F2F2D;
-$white: #FFFFFF;
-$off-white: #CACACA;
-$divider-color: #DEDEDE;
-
-$orange-dark: #FF6C00;
-$orange: #D68D44;
-$orange-light: #FFA700;
-
-$grey-darker: #3C3C3C;
-$grey-dark: #6D6C6E;
-$grey: #898989;
-$grey-light: #E6E6E6;
-$grey-lighter: #F7F7F7;
+@import "global";
+@import "footer";
 
 
-
-//==== GENERAL STYLING =====\\
-	body {
-		margin: 0;
-		font-family: "RoundedElegance", sans-serif;
-	}
-
-	button {
-		outline: none;
-		font-family: "RoundedElegance", sans-serif;
-	}
-
-	@font-face {
-		font-family: RoundedElegance;
-		src: url(fonts/Rounded_Elegance.ttf);
-	}
-
-	a {
-		font-family: "RoundedElegance", sans-serif;
-		text-decoration: none;
-	}
-
-	nav {
-		border-bottom: 1px solid $divider-color;
-		background-color: $white;
-		position: fixed;
-		font-size: 25px;
-		width: 100%;
-		padding: 5px;
-		top: 0;
-		z-index: 100;
-
-		@media screen and (max-width: 680px) {
-			background-color: $charcoal;
-		}
-	}
-
-	nav ul {
-		max-width: 340px;
-		padding-left: 0;
-		margin: 0 0 0 auto;
-		text-align: center;
-
-		@media screen and (max-width: 680px) {
-			width: auto;
-			margin: 0 auto;
-		}
-	}
-
-	nav li {
-		//-moz-animation: nav-icons 0.5s ease-in-out forwards;
-		//-webkit-animation: nav-icons 0.5s ease-in-out forwards;
-		//-ms-animation: nav-icons 0.5s ease-in-out forwards;
-		//animation: nav-icons 0.5s ease-in-out forwards;
-		//-moz-transform: translate3d(0,0,0);
-		//-webkit-transform: translate3d(0,0,0);
-		//-ms-transform: translate3d(0,0,0);
-		//transform: translate3d(0,0,0);
-		display: inline-block;
-		position: relative;
-	}
-
-	nav ul a {
-		display: inline-block;
-		color: $charcoal;
-		width: 1.6em;
-		line-height: 1.6em;
-		font-size: 30px;
-		position: relative;
-		text-align: center;
-		top: 0;
-		-moz-transition: all .15s ease-in-out;
-		-webkit-transition: all .15s ease-in-out;
-		-ms-transition: all .15s ease-in-out;
-		transition: all .15s ease-in-out;
-
-		@media screen and (max-width: 680px) {
-			color: $divider-color;
-		}
-	}
-
-	nav ul a:hover {
-		-webkit-transform: scale(1.15);
-		-moz-transform: scale(1.15);
-		-ms-transform: scale(1.15);
-		-o-transform: scale(1.15);
-		transform: scale(1.15);
-		opacity: .5;
-
-		@media screen and (max-width: 680px) {
-			-webkit-transform: none;
-			-moz-transform: none;
-			-ms-transform: none;
-			-o-transform: none;
-			transform: none;
-			opacity: 1;
-		}
-	}
-
-	nav ul a span {
-		display: none;
-	}
-
-	nav #shannash {
-		cursor: pointer;
-		font-weight: bold;
-		padding-left: .5em;
-		text-decoration: none;
-		color: $charcoal;
-
-		@media screen and (max-width: 680px) {
-			display: none;
-		}
-	}
 
 	#main-body {
 		padding-bottom: 1em;
 	}
+
 
 //===== BANNER =====\\
 
@@ -152,17 +28,17 @@ $grey-lighter: #F7F7F7;
 		padding-top: 33.3%;
 		margin-top: 36px;
 
-		@media screen and (min-width: 681px) and (max-width: 1100px) {
+		@media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
 			background-image: url("/images/shan-nash-900x400.jpg");
 			padding-top: 50%;
 		}
 
-		@media screen and (min-width: 421px) and (max-width: 680px) {
+		@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
 			background-image: url("/images/shan-nash-600x500.jpg");
 			padding-top: 83%;
 		}
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			background-image: url("/images/shan-nash-400x500.jpg");
 			padding-top: 125%;
 		}
@@ -180,14 +56,6 @@ $grey-lighter: #F7F7F7;
 	}
 
 
-	.righty {
-		float: right;
-	}
-
-	.lefty {
-		float: left;
-	}
-
 //===== INSTAGRAM =====\\
 
 	.instagram-sec {
@@ -195,7 +63,7 @@ $grey-lighter: #F7F7F7;
 		background-color: $grey-lighter;
 		text-align: center;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			max-width: 100%;
 		}
 	}
@@ -238,21 +106,22 @@ $grey-lighter: #F7F7F7;
 	.instagram-sec li {
 		display: inline;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			display: block;
 		}
 	}
 
 	.instagram-sec img {
 		max-width: 19%;
+		transition: all .15s ease-in-out;
 
-		@media screen and (max-width: 681px) and (min-width: 421px) {
+		@media screen and (max-width: 681px) and (min-width: $tablet-min) {
 			max-width: 32.7%;
 			float: left;
 			border: 1px solid $white;
 		}
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			max-width: 32.7%;
 			float: left;
 			border: 1px solid $white;
@@ -260,13 +129,22 @@ $grey-lighter: #F7F7F7;
 	}
 
       .instagram-sec .insta-img:hover {
-	      opacity: .65;
+	      opacity: .7;
+	      -webkit-transform: scale(.95);
+	      -moz-transform: scale(.95);
+	      -ms-transform: scale(.95);
+	      -o-transform: scale(.95);
+	      transform: scale(.95);
 
-	      @media screen and (max-width: 680px) {
+	      @media screen and (max-width: $tablet-max) {
 		      opacity: 1;
+		      -webkit-transform: none;
+		      -moz-transform: none;
+		      -ms-transform: none;
+		      -o-transform: none;
+		      transform: none;
 	      }
       }
-
 
 
 //===== PLAYER =====\\
@@ -277,15 +155,15 @@ $grey-lighter: #F7F7F7;
 		background-color: $white;
 		padding: 2em 2em;
 
-		@media screen and (min-width: 681px) and (max-width: 1100px) {
+		@media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
 
 		}
 
-		@media screen and (min-width: 421px) and (max-width: 680px) {
+		@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
 			padding: 0;
 		}
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			padding: 0 0;
 		}
 	}
@@ -297,11 +175,11 @@ $grey-lighter: #F7F7F7;
 		margin: auto;
 		padding: 1em;
 
-		@media screen and (min-width: 421px) and (max-width: 680px) {
+		@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
 			padding: 0;
 		}
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			padding: 0;
 		}
 	}
@@ -326,7 +204,7 @@ $grey-lighter: #F7F7F7;
 	.player li:hover {
 		background-color: $white;
 
-		@media screen and (max-width: 680px) {
+		@media screen and (max-width: $tablet-max) {
 			background-color: transparent;
 		}
 	}
@@ -341,7 +219,7 @@ $grey-lighter: #F7F7F7;
 		font-weight: 600;
 		color: #000000;
 
-		@media screen and (max-width: 680px) {
+		@media screen and (max-width: $tablet-max) {
 			font-weight: normal;
 			color: $white;
 		}
@@ -351,7 +229,7 @@ $grey-lighter: #F7F7F7;
 		color: #000000;
 		font-weight: 600;
 
-		@media screen and (max-width: 680px) {
+		@media screen and (max-width: $tablet-max) {
 			font-weight: normal;
 			color: $white;
 		}
@@ -364,7 +242,7 @@ $grey-lighter: #F7F7F7;
 	.player li.active:hover > .track-info {
 		background-color: $white;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			background-color: $grey-darker;
 		}
 	}
@@ -443,7 +321,7 @@ $grey-lighter: #F7F7F7;
 		overflow: hidden;
 		text-overflow: ellipsis;
 
-		@media screen and (max-width: 420px) {
+		@media screen and (max-width: $mobile-max) {
 			width: 80%;
 		}
 	}
@@ -490,8 +368,8 @@ $grey-lighter: #F7F7F7;
 		font-size: 15px;
 	}
 
-//===== PLAYBACK BUTTONS =====\\
 
+//===== PLAYBACK BUTTONS =====\\
 
 	#play, #pause, #fwd, #rew {
 	      width: 30px;
@@ -595,32 +473,4 @@ $grey-lighter: #F7F7F7;
 	}
 
 
-//===== FOOTER =====\\
 
-	footer {
-		font-size: 11px;
-		font-weight: bold;
-		width: 100%;
-		height: 30px;
-		color: $grey;
-		background-color: $white;
-		border-top: 1px solid $divider-color;
-		z-index: 100;
-
-		@media screen and (max-width: 680px) {
-			position: fixed;
-			bottom: 0;
-		}
-	}
-
-	footer .row {
-		padding: 8px 1em;
-	}
-
-	footer a {
-		color: #000000;
-	}
-
-	footer a:hover {
-		color: $orange-light;
-	}

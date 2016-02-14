@@ -16,6 +16,7 @@ angular
         'ngRoute',
         'ngSanitize',
         'ngTouch',
+        'ngTwitter',
         'plangular'
     ])
     .config(function ($routeProvider, plangularConfigProvider) {
@@ -33,19 +34,29 @@ angular
               .otherwise({
                 redirectTo: '/'
               });
-        plangularConfigProvider.clientId = '5fe8f9dee33cffbd9d2ca2b6708641f1';
-    })
-    .factory("Instagram", ['$http', function($http) {
-        var clientId = "f7957cfe23274aa99b75f180c2a82cb4";
+
+        //Soundcloud
+        plangularConfigProvider.clientId = "5fe8f9dee33cffbd9d2ca2b6708641f1";
+    }).factory("Instagram", Instagram);
+
+
+    // INJECTIONS
+    Instagram.inject = ['$http'];
+
+
+    /*
+    Initiate connection to Instagram account
+    It points to a particular url (playlist)
+     */
+    function Instagram($http) {
+        var clientId = "642176ece1e7445e99244cec26f4de1f";
         var userIdShanNash = "301474369";
         return {
             fetchRecentPosts: function(callback){
-                //var endpoint = "https://api.instagram.com/v1/users/" + userIdBasp + "/media/recent/?";
-                var endpoint = "https://api.instagram.com/v1/users/" + userIdShanNash + "/media/recent/?&client_id=642176ece1e7445e99244cec26f4de1f&callback=JSON_CALLBACK";
-                //var endpoint2 = "https://api.instagram.com/v1/media/popular?client_id=642176ece1e7445e99244cec26f4de1f&callback=JSON_CALLBACK";
+                var endpoint = "https://api.instagram.com/v1/users/" + userIdShanNash + "/media/recent/?&client_id=" + clientId + "&callback=JSON_CALLBACK";
                 $http.jsonp(endpoint).success(function(response){
                     callback(response.data);
                 });
             }
         };
-    }]);
+    }

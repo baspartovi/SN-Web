@@ -1,0 +1,126 @@
+//==== GENERAL STYLING =====\\
+body {
+	margin: 0;
+	font-family: "RoundedElegance", sans-serif;
+}
+
+button {
+	outline: none;
+	font-family: "RoundedElegance", sans-serif;
+}
+
+@font-face {
+	font-family: RoundedElegance;
+	src: url(fonts/Rounded_Elegance.ttf);
+}
+
+a {
+	font-family: "RoundedElegance", sans-serif;
+	text-decoration: none;
+}
+
+nav {
+	border-bottom: 1px solid $divider-color;
+	background-color: $white;
+	position: fixed;
+	font-size: 25px;
+	width: 100%;
+	padding: 5px;
+	top: 0;
+	z-index: 100;
+
+	@media screen and (max-width: 680px) {
+		background-color: $charcoal;
+	}
+}
+
+nav ul {
+	max-width: 340px;
+	padding-left: 0;
+	margin: 0 0 0 auto;
+	text-align: center;
+
+	@media screen and (max-width: 680px) {
+		width: auto;
+		margin: 0 auto;
+	}
+}
+
+nav li {
+	//-moz-animation: nav-icons 0.5s ease-in-out forwards;
+	//-webkit-animation: nav-icons 0.5s ease-in-out forwards;
+	//-ms-animation: nav-icons 0.5s ease-in-out forwards;
+	//animation: nav-icons 0.5s ease-in-out forwards;
+	//-moz-transform: translate3d(0,0,0);
+	//-webkit-transform: translate3d(0,0,0);
+	//-ms-transform: translate3d(0,0,0);
+	//transform: translate3d(0,0,0);
+	display: inline-block;
+	position: relative;
+}
+
+nav ul a {
+	display: inline-block;
+	color: $charcoal;
+	width: 1.6em;
+	line-height: 1.6em;
+	font-size: 30px;
+	position: relative;
+	text-align: center;
+	top: 0;
+	-moz-transition: all .15s ease-in-out;
+	-webkit-transition: all .15s ease-in-out;
+	-ms-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+
+	@media screen and (max-width: 680px) {
+		color: $divider-color;
+	}
+}
+
+nav ul a:hover {
+	-webkit-transform: scale(1.15);
+	-moz-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	-o-transform: scale(1.15);
+	transform: scale(1.15);
+	opacity: .5;
+
+	@media screen and (max-width: 680px) {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+		opacity: 1;
+	}
+}
+
+nav ul a span {
+	display: none;
+}
+
+nav #shannash {
+	cursor: pointer;
+	font-weight: bold;
+	padding-left: .5em;
+	text-decoration: none;
+	color: $charcoal;
+
+	@media screen and (max-width: 680px) {
+		display: none;
+	}
+}
+
+nav #shannash:hover {
+	opacity: .5;
+}
+
+
+.righty {
+	float: right;
+}
+
+.lefty {
+	float: left;
+}
