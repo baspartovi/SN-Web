@@ -32,6 +32,7 @@ angular
 
         //Soundcloud
         plangularConfigProvider.clientId = "5fe8f9dee33cffbd9d2ca2b6708641f1";
+
     }).factory("Instagram", Instagram);
 
 
