@@ -116,6 +116,7 @@ nav #shannash:hover {
 	opacity: .5;
 }
 
+//==== ** =====\\
 
 .righty {
 	float: right;
@@ -123,4 +124,14 @@ nav #shannash:hover {
 
 .lefty {
 	float: left;
+}
+
+.row {
+	padding: 0 1em;
+}
+
+.row:after {
+	content: '';
+	display: block;
+	clear: both;
 }

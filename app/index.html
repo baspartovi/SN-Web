@@ -53,13 +53,12 @@
                         <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
 
                               <div class="player-info">
-                                    <div class="top">
+                                    <div class="row">
                                           <h4 class="username lefty">{{playlist.user.username}}</h4>
                                           <span class="righty">{{ currentTime | hhmmss }} / {{ duration | hhmmss }}</span>
                                     </div>
 
-                                    <div class="top">
-
+                                    <div class="row">
                                           <h3 class="playlist-title lefty">{{playlist.title}}</h3>
                                           <div class="playback righty">
                                                 <div id="rew" ng-click="previous()"></div>
@@ -67,7 +66,6 @@
                                                 <div id="pause" ng-click="playPause(index)" ng-if="player.playing === track.src"></div>
                                                 <div id="fwd" ng-click="next()"></div>
                                           </div>
-
                                     </div>
 
 
