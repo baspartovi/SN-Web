@@ -44,7 +44,7 @@ angular
     It points to a particular url (playlist)
      */
     function Instagram($http) {
-        var clientId = "642176ece1e7445e99244cec26f4de1f";
+        var clientId = "5e7cb176cc4340c09124d9f50733f34f";
         var userIdShanNash = "301474369";
         return {
             fetchRecentPosts: function(callback){
