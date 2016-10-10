@@ -30,7 +30,7 @@ angular
               });
 
         //Soundcloud
-        plangularConfigProvider.clientId = "5fe8f9dee33cffbd9d2ca2b6708641f1";
+        plangularConfigProvider.clientId = "a91d18f0dd6bbb7c2007cd1f997a4c36";
 
     }).factory("Instagram", Instagram);
 
@@ -44,11 +44,11 @@ angular
     It points to a particular url (playlist)
      */
     function Instagram($http) {
-        var clientId = "5e7cb176cc4340c09124d9f50733f34f";
+        var clientId = "392242.425a5b0.2867047a0a3543f38d3e6edf6c64c7d7";
         var userIdShanNash = "301474369";
         return {
             fetchRecentPosts: function(callback){
-                var endpoint = "https://api.instagram.com/v1/users/" + userIdShanNash + "/media/recent/?&client_id=" + clientId + "&callback=JSON_CALLBACK";
+                var endpoint = "https://api.instagram.com/v1/users/" + userIdShanNash + "/media/recent/?client_id=" + clientId + "&callback=JSON_CALLBACK";
                 $http.jsonp(endpoint).success(function(response){
                     callback(response.data);
                 });

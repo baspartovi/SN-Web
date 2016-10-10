@@ -50,7 +50,7 @@
                   <!--< PLAYER >-->
                   <section class="player-sec">
 
-                        <div class="player" plangular="https://soundcloud.com/shannash/sets/shan-nash-music">
+                        <div class="player fadeIn animate delay-0_5s" plangular="https://soundcloud.com/shannash/sets/shan-nash-music" ng-hide="isLoadingPlayer">
 
                               <div class="player-info">
                                     <div class="row">
@@ -98,19 +98,18 @@
 
                   </section>  <!--< END PLAYER >-->
 
-                  <!--< INSTAGRAM >-->
-                  <section class="instagram-sec">
-                        <div class="insta-header">
-                              <a target="_blank" href="https://www.instagram.com/shannashmusic/" class="icon fa fa-instagram"><span class="label">Instagram</span></a>
-                        </div>
-                        <div class="insta-list">
-                              <li ng-repeat="item in items">
-                                    <a href="{{item.link}}" target="_blank"><img class="insta-img" ng-src="{{item.images.low_resolution.url}}" /></a>
-                                    <!--<p ng-bind="item.caption.text"></p>-->
-                              </li>
-                        </div>
-                  </section>  <!--< END INSTAGRAM >-->
-
+                  <!--&lt;!&ndash;< INSTAGRAM >&ndash;&gt;-->
+                  <!--<section class="instagram-sec">-->
+                        <!--<div class="insta-header">-->
+                              <!--<a target="_blank" href="https://www.instagram.com/shannashmusic/" class="icon fa fa-instagram"><span class="label">Instagram</span></a>-->
+                        <!--</div>-->
+                        <!--<div class="insta-list">-->
+                              <!--<li ng-repeat="item in items">-->
+                                    <!--<a href="{{item.link}}" target="_blank"><img class="insta-img" ng-src="{{item.images.low_resolution.url}}" /></a>-->
+                                    <!--&lt;!&ndash;<p ng-bind="item.caption.text"></p>&ndash;&gt;-->
+                              <!--</li>-->
+                        <!--</div>-->
+                  <!--</section>  &lt;!&ndash;< END INSTAGRAM >&ndash;&gt;-->
 
                   <!--< FOOTER >-->
                   <footer id="footer">

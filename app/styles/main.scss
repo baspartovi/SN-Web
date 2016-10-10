@@ -154,6 +154,7 @@
 		border-bottom: 1px solid $divider-color;
 		background-color: $white;
 		padding: 2em 2em;
+		min-height: 420px;
 
 		@media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
 
@@ -169,7 +170,7 @@
 	}
 
 	.player {
-		background-color: $charcoal;
+		background-color: $charcoal-dark;
 		border-radius: 3px;
 		max-width: 800px;
 		margin: auto;
