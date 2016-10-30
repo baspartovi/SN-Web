@@ -20,26 +20,25 @@
 //===== BANNER =====\\
 
 	.banner-sec {
-		background-image: url("/images/shan-nash-1500x500.jpg");
+		background-image: url("/images/ShanNash_img.jpg");
 		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: center;
+		background-color: #030303;
 		width: 100%;
 		height: 0;
 		padding-top: 33.3%;
 		margin-top: 36px;
 
 		@media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
-			background-image: url("/images/shan-nash-900x400.jpg");
 			padding-top: 50%;
 		}
 
 		@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-			background-image: url("/images/shan-nash-600x500.jpg");
 			padding-top: 83%;
 		}
 
 		@media screen and (max-width: $mobile-max) {
-			background-image: url("/images/shan-nash-400x500.jpg");
 			padding-top: 125%;
 		}
 	}
@@ -146,6 +145,26 @@
 	      }
       }
 
+//===== ABOUT =====\\
+
+	.about-sec {
+		text-align: center;
+      }
+
+      .about-sec .container {
+	      max-width: 800px;
+	      margin: auto;
+	      padding: 2em 3em;
+
+	      @media screen and (max-width: $mobile-max) {
+		      padding: 1em;
+	      }
+      }
+
+      .about-sec p {
+	      line-height: 25px;
+	      font-size: 18px;
+      }
 
 //===== PLAYER =====\\
 
