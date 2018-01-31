@@ -9,12 +9,6 @@
  * Controller of the snWebApp
  */
 angular.module('snWebApp')
-    .controller('MainCtrl', function ($scope, Instagram) {
-        $scope.items = [];
-        $scope.data = {};
-
-        Instagram.fetchRecentPosts(function(data){
-            $scope.items = data;
-        });
+    .controller('MainCtrl', function ($scope) {
 
     });
